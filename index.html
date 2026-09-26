@@ -29,14 +29,24 @@
     </header>
 
     <!-- Navigation -->
-    <!-- Navigation -->
-<nav class="main-nav">
+    <nav class="main-nav">
 
     <!-- B6 - Responsive navigation without JavaScript -->
-    <details class="mobile-menu">
-        <summary>☰ Menu</summary>
+        <details class="mobile-menu">
+            <summary>☰ Menu</summary>
+    
+            <ul class="mobile-nav-links">
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#clubs">Clubs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+        </details>
 
-        <ul class="mobile-nav-links">
+        <ul class="nav-links">
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#calendar">Calendar</a></li>
@@ -45,26 +55,15 @@
             <li><a href="#about">About us</a></li>
             <li><a href="#contact">Contact us</a></li>
         </ul>
-    </details>
+    
+        <form class="search-form" action="#events" method="get">
+            <label for="search-events">Search events</label>
+            <input id="search-events" name="search" type="search"
+                placeholder="Search events">
+            <button type="submit">Search</button>
+        </form>
 
-    <ul class="nav-links">
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#calendar">Calendar</a></li>
-        <li><a href="#clubs">Clubs</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#contact">Contact us</a></li>
-    </ul>
-
-    <form class="search-form" action="#events" method="get">
-        <label for="search-events">Search events</label>
-        <input id="search-events" name="search" type="search"
-            placeholder="Search events">
-        <button type="submit">Search</button>
-    </form>
-
-</nav>
+    </nav>
 
     <!-- Main content -->
     <main id="main">
