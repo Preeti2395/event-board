@@ -378,6 +378,8 @@ body {
         flex-direction: row;
     }
 }
+
+
 /* B5 and B7 */
 @media (min-width: 64rem) {
     #main {
