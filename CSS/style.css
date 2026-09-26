@@ -148,7 +148,7 @@ section {
 }
 
 .club-list {
-    /* B4 and B5 - mobile-first grid */
+    /* B4 and B5 */
     display: grid;
     grid-template-columns: 1fr;
     gap: 14px;
