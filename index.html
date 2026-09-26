@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IIIT Vadodara Campus Event Board</title>
+    <meta name="description"
+        content="Discover campus workshops, sports, cultural events and club activities at IIIT Vadodara.">
+    <link rel="icon" href="logo.jpg">
+    <meta property="og:title" content="IIIT Vadodara Campus Event Board">
+    <meta property="og:description" content="Discover. Participate. Connect with campus events.">
+    <meta property="og:image" content="logo.jpg">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/theme-dark.css" media="not-all">
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- Header -->
+    <header id="site-header">
+        <img src="logo.jpg" alt="IIIT Vadodara logo" width="90" height="90">
+        <p class="institute-name">Indian Institute of Information Technology Vadodara</p>
+        <h1>Campus Event Board</h1>
+        <p class="tagline">Discover. Participate. Connect.</p>
+        <p><a href="https://share.google/fVV15q4jyST9GCC36">Welcome to IIIT Vadodara</a></p>
+    </header>
+
+    <!-- Navigation -->
+    <!-- Navigation -->
+<nav class="main-nav">
+
+    <!-- B6 - Responsive navigation without JavaScript -->
+    <details class="mobile-menu">
+        <summary>☰ Menu</summary>
+
+        <ul class="mobile-nav-links">
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#calendar">Calendar</a></li>
+            <li><a href="#clubs">Clubs</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+    </details>
+
+    <ul class="nav-links">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#calendar">Calendar</a></li>
+        <li><a href="#clubs">Clubs</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#contact">Contact us</a></li>
+    </ul>
+
+    <form class="search-form" action="#events" method="get">
+        <label for="search-events">Search events</label>
+        <input id="search-events" name="search" type="search"
+            placeholder="Search events">
+        <button type="submit">Search</button>
+    </form>
+
+</nav>
+
+    <!-- Main content -->
+    <main id="main">
+        <section id="home" class="intro">
+            <h2>Welcome</h2>
+            <p>Find activities that make college life more creative, collaborative and memorable. Press <kbd>Tab</kbd>
+                to move through all links and form controls using only the keyboard.</p>
+        </section>
+
+        <section id="events" class="events">
+
+    <h2 class="section-heading">Upcoming events</h2>
+
+    <!-- B3 -->
+    <div class="event-grid">
+
+        <article class="event-card">
+            <h3>Technical Workshop</h3>
+
+            <p class="event-date">
+                <strong>Date:</strong>
+                <time datetime="2026-09-05">5 September 2026</time>
+            </p>
+
+            <p class="event-location">
+                <strong>Location:</strong> Computer Lab
+            </p>
+
+            <p class="event-description">
+                Learn practical web skills with the
+                <abbr title="Web Hypertext Application Technology Working Group">
+                    WHATWG
+                </abbr>
+                HTML standard. Registration is
+                <mark>open now</mark>.
+            </p>
+
+            <a class="event-link" href="#submit-event">
+                Submit your interest
+            </a>
+        </article>
+
+
+        <article class="event-card">
+            <h3>Sports Day</h3>
+
+            <p class="event-date">
+                <strong>Date:</strong>
+                <time datetime="2026-09-10">10 September 2026</time>
+            </p>
+
+            <p class="event-location">
+                <strong>Location:</strong> College Ground
+            </p>
+
+            <p class="event-description">
+                Join athletics, team games and friendly competition
+                with fellow students.
+            </p>
+
+            <a class="event-link" href="#submit-event">
+                Submit your interest
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+        <section id="submit-event" class="submission-section">
+            <h2>Submit an event</h2>
+            <form class="event-form" action="#" method="post">
+                <fieldset>
+                    <legend>Event details</legend>
+                    <p>
+                        <label for="event-name">Event name</label>
+                        <input id="event-name" name="event-name" type="text" placeholder="Enter event name" required>
+                    </p>
+                    <p>
+                        <label for="event-email">Contact email</label>
+                        <input id="event-email" name="event-email" type="email" placeholder="you@example.com" required>
+                    </p>
+                    <p>
+                        <label for="event-date">Event date</label>
+                        <input id="event-date" name="event-date" type="date" required>
+                    </p>
+                    <p>
+                        <label for="city">Campus city</label>
+                        <select id="city" name="city" required>
+                            <option value="">Select a city</option>
+                            <option value="gandhinagar">Gandhinagar</option>
+                            <option value="vadodara">Vadodara</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="5"
+                            placeholder="Write event description" required></textarea>
+                    </p>
+                    <button type="submit">Add event</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="calendar" class="schedule-section">
+            <h2>Event schedule</h2>
+            <table>
+                <caption>September 2026 campus event schedule</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Event name</th>
+                        <th scope="col">Event date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Technical Workshop</td>
+                        <td><time datetime="2026-09-05">5 September 2026</time></td>
+                    </tr>
+                    <tr>
+                        <td>Sports Day</td>
+                        <td><time datetime="2026-09-10">10 September 2026</time></td>
+                    </tr>
+                    <tr>
+                        <td>Cultural Fest</td>
+                        <td><time datetime="2026-09-18">18 September 2026</time></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="clubs" class="clubs-section">
+            <h2>Student clubs</h2>
+           <p>Explore coding, cultural and sports clubs. <cite>Campus life becomes richer when students build it together.</cite></p>
+            <div class="club-list">
+                <article class="club-box">
+                    <h3>Coding Club</h3>
+                    <p>Learn, build and share technical ideas.</p>
+                </article>
+                <article class="club-box">
+                    <h3>Cultural Club</h3>
+                    <p>Music, dance and creative activities.</p>
+                </article>
+                <article class="club-box">
+                    <h3>Sports Club</h3>
+                    <p>Games, fitness and team activities.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <h2>Campus gallery</h2>
+            <figure>
+                <img src="campus-event.jpg" alt="Official logo of IIIT Vadodara" width="180" height="180">
+                <figcaption>The IIIT Vadodara identity brings every campus event together.</figcaption>
+            </figure>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About us</h2>
+            <p>The Campus Event Board provides information about events organised at IIIT Vadodara. This page is built
+                using <code>semantic HTML</code> and CSS.</p>
+            <p><span lang="hi">Aaiye, judie aur apna talent dikhaiye.</span></p>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <details>
+                <summary>Who can submit an event?</summary>
+                <p>Any registered IIIT Vadodara student club or campus committee can submit an event.</p>
+            </details>
+            <details>
+                <summary>When will my event appear?</summary>
+                <p>After the event information is reviewed by the event board team.</p>
+            </details>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>Contact us</h2>
+        <address>Email: <a href="mailto:events@iiitvadodara.ac.in">events@iiitvadodara.ac.in</a><br>IIIT Vadodara,
+            Gandhinagar Campus</address>
+        <nav>
+            <a href="#home">Back to top</a>
+            <a href="#events">Upcoming events</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <p>&copy; 2026 IIIT Vadodara Campus Event Board. Browser status: <samp>Ready</samp>.</p>
+    </footer>
+    <!-- A9: hidden now; can be revealed later by changing display in CSS -->
+    <p class="future-message">More campus events coming soon.</p>
+</body>
+
+</html>

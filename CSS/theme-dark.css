@@ -1,0 +1,41 @@
+:root {
+    --brand: #78d9c9;
+    --accent: #ffd166;
+    --ink: #edf5f2;
+    --surface: #1f3130;
+}
+
+body {
+    background-color: #102120;
+}
+
+#site-header,
+nav {
+    background-color: #16302e;
+}
+
+.events {
+    background-color: #173734;
+}
+
+article,
+figure,
+details,
+table {
+    background-color: var(--surface);
+}
+
+th {
+    background-color: #31514d;
+}
+
+input,
+select,
+textarea {
+    background-color: #f7fffc;
+    color: #172927;
+}
+
+footer {
+    background-color: #091817;
+}
