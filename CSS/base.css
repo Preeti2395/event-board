@@ -186,6 +186,7 @@ th {
     background: #dcece7;
 }
 
+
 details {
     background: var(--surface);
     border-left: 4px solid var(--accent);
