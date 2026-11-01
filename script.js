@@ -1,7 +1,7 @@
 
 console.log("Assignment 6 started successfully");
 
- // A2: Store values in variables
+ // A2
 
 const eventTitle = "Technical Workshop";
 const eventDate = "5 September 2026";
@@ -15,7 +15,7 @@ console.log("Total Seats:", totalSeats);
 console.log("Seats Left:", seatsLeft);
 console.log("Online Event:", isOnline);
 
- // A3: Model events as an array of objects
+ // A3
 
 const events = [
     {
@@ -45,7 +45,7 @@ const events = [
 ];
 
 
- // B8: Load saved events from localStorage
+ // B8
 
 const savedEvents = localStorage.getItem("campusEvents");
 
@@ -68,7 +68,7 @@ console.log("All Events:", events);
 console.log("First Event:", events[0]);
 console.log("Total Events:", events.length);
 
- // A4: Control Flow using if/else
+ // A4
 
 for (const event of events) {
     let status;
@@ -84,7 +84,7 @@ for (const event of events) {
     console.log(event.title + " : " + status);
 }
 
- // A5: Repeat with a for...of loop
+ // A5
 
 console.log("----- All Campus Events -----");
 
@@ -96,7 +96,7 @@ for (const event of events) {
     console.log("------------------------");
 }
 
- // A6: Function with parameter and return
+ // A6
 
 function formatEvent(ev) {
     return ev.title + " | Date: " + ev.date +
@@ -104,14 +104,13 @@ function formatEvent(ev) {
            " | Online: " + ev.online;
 }
 
-// Calling the function
-console.log("----- Formatted Events -----");
+console.log("Formatted Events");
 
 for (const event of events) {
     console.log(formatEvent(event));
 }
 
- // A7: Arrow Function with filter() method
+ // A7
 
 const availableEvents = events.filter(ev => ev.seats > 0);
 
@@ -121,7 +120,7 @@ availableEvents.forEach(ev => {
     console.log(ev.title + " | Seats: " + ev.seats);
 });
 
- // A8: Block Scope using let and const
+ // A8
 
 console.log("----- Block Scope Example -----");
 
@@ -137,7 +136,7 @@ if (true) {
 
 console.log("Outside Message:", message);
 
- // B1: Select HTML elements using DOM
+ // B1
 
 const mainSection = document.getElementById("main");
 
@@ -152,7 +151,7 @@ console.log("Navigation:", navigation);
 console.log("Total Links:", allLinks.length);
 console.log("Search Input:", searchInput);
 
- // B2: Render events dynamically from data
+ // B2
 
 const eventContainer = document.querySelector("#event-container");
 
@@ -200,7 +199,7 @@ function renderEvents(eventList) {
 
 renderEvents(events);
 
- // B3: Read and Change Content
+ // B3
 
 const firstCard = document.querySelector(".event-card");
 
@@ -209,20 +208,15 @@ if (firstCard) {
     const title = firstCard.querySelector("h3");
     console.log("Original Title:", title.textContent);
 
-    // Change text content
     title.textContent = "Technical Workshop - Register Now";
 
-    // Add a CSS class
     firstCard.classList.add("highlight-card");
 
-    // Change style
     title.style.color = "darkgreen";
 
-    // Set an attribute
     firstCard.setAttribute("data-event", "technical");
 }
 
-// Update full event cards
 const allCards = document.querySelectorAll(".event-card");
 
 allCards.forEach((card, index) => {
@@ -233,7 +227,7 @@ allCards.forEach((card, index) => {
 
 console.log("B3 DOM manipulation completed");
 
- // B4: Handle Click Event
+ // B4
 
 const searchButton = document.querySelector(
     ".search-form button"
@@ -241,27 +235,23 @@ const searchButton = document.querySelector(
 
 searchButton.addEventListener("click", function(event) {
 
-    // Prevent page reload
     event.preventDefault();
 
-    // Get search input value
     const searchText = document
         .getElementById("search-events")
         .value.toLowerCase().trim();
 
-    // Filter matching events
     const matchingEvents = events.filter(ev =>
         ev.title.toLowerCase().includes(searchText)
     );
 
-    // Display matching events
     renderEvents(matchingEvents);
 
     console.log("Search Button Clicked");
     console.log("Search Text:", searchText);
 });
 
- // B5: Handle Keyboard Events
+ // B5
 
 const eventSearchInput = document.getElementById("search-events");
 
@@ -285,7 +275,7 @@ eventSearchInput.addEventListener("keydown", function(event) {
     }
 });
 
- // B6: Handle Form Submission
+ // B6
 
 const eventForm = document.querySelector(".event-form");
 
@@ -293,19 +283,17 @@ eventForm.addEventListener("submit", function(e) {
     e.preventDefault();
 
     
-    // B7: Validate before adding event
+    // B7
     if (!validateEventForm()) {
         return;
     }
 
-    // Get form values
     const name = document.getElementById("event-name").value.trim();
     const email = document.getElementById("event-email").value.trim();
     const date = document.getElementById("event-date").value;
     const city = document.getElementById("city").value;
     const description = document.getElementById("description").value.trim();
 
-    // Create new event object
     const newEvent = {
         title: name,
         date: date,
@@ -316,16 +304,12 @@ eventForm.addEventListener("submit", function(e) {
         description: description
     };
 
-    // Add event to array
     events.push(newEvent);
     
 localStorage.setItem("campusEvents", JSON.stringify(events));
 
-
-    // Display updated events
     renderEvents(events);
 
-    // Clear form
     eventForm.reset();
 
     console.log("New Event Added:", newEvent);
@@ -333,7 +317,7 @@ localStorage.setItem("campusEvents", JSON.stringify(events));
     alert("Event added successfully!");
 });
 
- // B7: Form Validation
+ // B7
 
 const eventNameInput = document.getElementById("event-name");
 const eventEmailInput = document.getElementById("event-email");
@@ -364,7 +348,7 @@ function validateEventForm() {
 
 console.log("B7 Form Validation Ready");
 
- // B7: Fetch events from events.json
+ // B7
 
 async function fetchEvents() {
     const container = document.getElementById("event-container");
@@ -384,10 +368,8 @@ async function fetchEvents() {
 
         const fetchedEvents = await response.json();
 
-        // Success state
         console.log("Fetched Events:", fetchedEvents);
 
-        // Merge without duplicating existing events
         for (const ev of fetchedEvents) {
             const exists = events.some(
                 item => item.title === ev.title
@@ -403,7 +385,7 @@ async function fetchEvents() {
         console.log("Events loaded successfully!");
 
     } catch (error) {
-        // Error state
+
         console.error("Fetch Error:", error);
         console.log("Showing existing events instead.");
 
@@ -419,5 +401,4 @@ async function fetchEvents() {
     }
 }
 
-// Call fetch function
 fetchEvents();
