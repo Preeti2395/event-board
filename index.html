@@ -29,12 +29,13 @@
     </header>
 
     <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="main-nav">
 
-    <!-- B6 -->
+        <!-- B6 - Responsive navigation without JavaScript -->
         <details class="mobile-menu">
             <summary>☰ Menu</summary>
-    
+
             <ul class="mobile-nav-links">
                 <li><a class="active" href="#home">Home</a></li>
                 <li><a href="#events">Events</a></li>
@@ -55,11 +56,10 @@
             <li><a href="#about">About us</a></li>
             <li><a href="#contact">Contact us</a></li>
         </ul>
-    
+
         <form class="search-form" action="#events" method="get">
             <label for="search-events">Search events</label>
-            <input id="search-events" name="search" type="search"
-                placeholder="Search events">
+            <input id="search-events" name="search" type="search" placeholder="Search events">
             <button type="submit">Search</button>
         </form>
 
@@ -75,63 +75,16 @@
 
         <section id="events" class="events">
 
-    <h2 class="section-heading">Upcoming events</h2>
+            <h2 class="section-heading">Upcoming events</h2>
 
-    <!-- B3 -->
-    <div class="event-grid">
+            <!-- B3 -->
 
-        <article class="event-card">
-            <h3>Technical Workshop</h3>
-
-            <p class="event-date">
-                <strong>Date:</strong>
-                <time datetime="2026-09-05">5 September 2026</time>
-            </p>
-
-            <p class="event-location">
-                <strong>Location:</strong> Computer Lab
-            </p>
-
-            <p class="event-description">
-                Learn practical web skills with the
-                <abbr title="Web Hypertext Application Technology Working Group">
-                    WHATWG
-                </abbr>
-                HTML standard. Registration is
-                <mark>open now</mark>.
-            </p>
-
-            <a class="event-link" href="#submit-event">
-                Submit your interest
-            </a>
-        </article>
+            <!-- B2: Dynamic Events Container -->
+            <div class="event-grid" id="event-container">
+            </div>
 
 
-        <article class="event-card">
-            <h3>Sports Day</h3>
-
-            <p class="event-date">
-                <strong>Date:</strong>
-                <time datetime="2026-09-10">10 September 2026</time>
-            </p>
-
-            <p class="event-location">
-                <strong>Location:</strong> College Ground
-            </p>
-
-            <p class="event-description">
-                Join athletics, team games and friendly competition
-                with fellow students.
-            </p>
-
-            <a class="event-link" href="#submit-event">
-                Submit your interest
-            </a>
-        </article>
-
-    </div>
-
-</section>
+        </section>
 
         <section id="submit-event" class="submission-section">
             <h2>Submit an event</h2>
@@ -160,8 +113,8 @@
                     </p>
                     <p>
                         <label for="description">Description</label>
-                        <textarea id="description" name="description" rows="5"
-                            placeholder="Write event description" required></textarea>
+                        <textarea id="description" name="description" rows="5" placeholder="Write event description"
+                            required></textarea>
                     </p>
                     <button type="submit">Add event</button>
                 </fieldset>
@@ -197,7 +150,8 @@
 
         <section id="clubs" class="clubs-section">
             <h2>Student clubs</h2>
-           <p>Explore coding, cultural and sports clubs. <cite>Campus life becomes richer when students build it together.</cite></p>
+            <p>Explore coding, cultural and sports clubs. <cite>Campus life becomes richer when students build it
+                    together.</cite></p>
             <div class="club-list">
                 <article class="club-box">
                     <h3>Coding Club</h3>
@@ -242,7 +196,6 @@
         </section>
     </main>
 
-    
     <!-- Footer -->
     <footer id="contact">
         <h2>Contact us</h2>
@@ -255,8 +208,12 @@
         </nav>
         <p>&copy; 2026 IIIT Vadodara Campus Event Board. Browser status: <samp>Ready</samp>.</p>
     </footer>
-    <!-- A9 -->
+    <!-- A9: hidden now; can be revealed later by changing display in CSS -->
     <p class="future-message">More campus events coming soon.</p>
+
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
