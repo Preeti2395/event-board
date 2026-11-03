@@ -1,0 +1,27 @@
+
+[
+  {
+    "title": "Technical Workshop",
+    "date": "5 September 2026",
+    "seats": 25,
+    "online": false
+  },
+  {
+    "title": "Sports Day",
+    "date": "10 September 2026",
+    "seats": 40,
+    "online": false
+  },
+  {
+    "title": "Coding Competition",
+    "date": "15 September 2026",
+    "seats": 0,
+    "online": true
+  },
+  {
+    "title": "Cultural Fest",
+    "date": "20 September 2026",
+    "seats": 4,
+    "online": false
+  }
+]
