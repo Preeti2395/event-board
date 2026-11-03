@@ -418,7 +418,7 @@ async function fetchEvents() {
 
 fetchEvents();
 
-// Assignment 7 - B4: Fetch and parse XML data
+// Assignment 7 - B4
 async function fetchXML() {
     try {
         const response = await fetch("events.xml");
@@ -440,7 +440,7 @@ async function fetchXML() {
 
         console.log("First XML Event Title:", firstTitle);
 
-        // Assignment 7 - B4git add script.js
+        // Assignment 7 - B4
         document.getElementById("xml-event-title").textContent =
             "First Event from XML: " + firstTitle;
 
@@ -450,7 +450,7 @@ async function fetchXML() {
 }
 
 fetchXML();
-// Assignment 7 - B5: Compare JSON and XML file sizes
+// Assignment 7 - B5
 async function compareFileSizes() {
     try {
         const [jsonResponse, xmlResponse] = await Promise.all([
