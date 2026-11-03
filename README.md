@@ -1,71 +1,66 @@
-Campus Event Board
+ Campus Event Board
 
-Campus Event Board is a responsive and interactive website developed for the Web Programming Lab at IIIT Vadodara.
+Campus Event Board is a responsive web application designed to help students explore and manage activities at the Indian Institute of Information Technology Vadodara.
 
-The website provides information about campus events, student clubs, schedules, and campus activities. Assignment 6 extends the existing HTML and CSS website by adding JavaScript functionality, dynamic event rendering, event searching, form handling, and JSON data loading.
+The platform brings together campus events, schedules, student clubs, and event registration information in one accessible interface. It combines HTML, CSS, JavaScript, JSON, and XML to demonstrate interactive web development and structured data processing.
 
-Features
+Key Features
 
-HTML and CSS Features (Assignment 5)
+Event Discovery and Management
+- Browse campus workshops, competitions, sports, and cultural activities.
+- View event details and remaining seat availability.
+- Search events using keywords.
+- Display event information dynamically through JavaScript.
+- Show a helpful message when no matching events are found.
 
-- Upcoming campus events
-- Event submission form
-- Event schedule
-- Student clubs section
-- Campus gallery
-- FAQ section
-- Responsive navigation
-- Mobile-first responsive design
-- Responsive images and typography
-- Keyboard-accessible navigation
+Event Submission
+- Submit event details through an interactive form.
+- Validate event names, email addresses, and required fields.
+- Process form submissions using JavaScript.
+- Store event-related information in browser localStorage.
 
-JavaScript Features (Assignment 6)
+Structured Data Processing
+- Maintain campus event information in JSON and XML formats.
+- Retrieve event data using the Fetch API.
+- Convert JSON objects to text and back using `JSON.stringify()` and `JSON.parse()`.
+- Parse XML documents using `DOMParser`.
+- Extract XML values using `getElementsByTagName()`.
+- Display the first XML event title on the webpage.
+- Compare JSON and XML file sizes.
+- Handle loading states and data retrieval errors.
 
-- JavaScript variables, arrays, objects, loops, and functions
-- Event availability status based on remaining seats
-- Array filtering to identify available events
-- DOM selection and manipulation
-- Dynamic event rendering
-- Event searching and filtering
-- Keyboard event handling
-- Event submission using JavaScript
-- Form validation
-- Browser localStorage for saving event data
-- Fetch API to load events from `events.json`
-- Loading, success, and error handling
+ User Interface and Accessibility
+- Responsive layouts for mobile, tablet, and desktop screens.
+- Mobile-friendly navigation.
+- Event cards generated dynamically.
+- Campus event schedule and student club information.
+- Campus gallery and frequently asked questions.
+- Semantic HTML structure.
+- Keyboard-accessible navigation and form controls.
 
 Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript
-- JSON
-- CSS Grid
-- Flexbox
-- Media Queries
-- DOM API
-- Fetch API
-- Browser localStorage
-- Git and GitHub
-
-Responsive Design
-The website follows a mobile-first approach.
-
-Different layouts are provided for:
-- Mobile devices
-- Tablets
-- Desktop screens
-
-CSS media queries adjust the layout according to screen width.
+| Technology | Purpose |
+|---|---|
+| HTML5 | Webpage structure and semantic content |
+| CSS3 | Styling and responsive layouts |
+| JavaScript | Interactive features and event handling |
+| JSON | Structured event data storage |
+| XML | Alternative structured data representation |
+| Fetch API | Loading external event data |
+| DOM API | Dynamic webpage updates |
+| DOMParser | Parsing XML documents |
+| localStorage | Browser-based data persistence |
+| Git and GitHub | Version control and team collaboration |
 
 Project Structure
 
-text
+
 event-board/
-│
 ├── index.html
 ├── script.js
 ├── events.json
+├── events.xml
 ├── README.md
 ├── CSS/
 │   ├── base.css
@@ -75,70 +70,74 @@ event-board/
 └── campus-event.jpg
 
 
-How to Run the Project
+Getting Started
 
-1. Download or clone the GitHub repository.
-2. Open the project folder in Visual Studio Code.
-3. Install the Live Server extension if it is not already installed.
+1. Clone or download the project repository.
+2. Open the `event-board` folder in Visual Studio Code.
+3. Install the Live Server extension if required.
 4. Right-click `index.html` and select **Open with Live Server**.
-5. The website will open in your browser.
-6. Explore the events, use the search feature, and test the event submission form.
+5. Explore the website and test the event search, event submission, and dynamic event display features.
 
-Note:Running the project through Live Server is recommended because the Fetch API loads data from the local `events.json` file.
+Note: Run the project using a local development server rather than opening the HTML file directly, because JavaScript uses the Fetch API to load JSON and XML files.
 
-JavaScript Implementation
+How the Application Works
 
-Event Management
+Dynamic Event Display
 
-JavaScript objects and arrays store event details such as title, date, seats, and availability.
+JavaScript manages event information and generates event cards based on the available data. Event availability is determined by the number of remaining seats.
 
-Dynamic DOM Updates
+Event Search
 
-JavaScript updates the event display dynamically using DOM methods.
+The search feature filters events according to user input and updates the displayed results without manually modifying the HTML.
 
-Search Functionality
+Form Validation
 
-Users can search for events, and JavaScript filters the event list based on the entered search term.
+The event submission form checks user input before processing the submitted information.
 
-Form Handling
+JSON and XML Integration
 
-The event submission form accepts user input, validates required information, and processes event submissions.
+Event records are maintained in both formats. JavaScript retrieves the JSON data to display events and parses XML data to extract and display event information.
 
-Local Storage
+Data Persistence
 
-Browser localStorage is used to retain event-related data.
+Browser localStorage supports retaining event-related information between page visits.
 
-Fetch API
+Error Handling
 
-The Fetch API retrieves event information from `events.json` and handles loading, successful responses, and errors.
+The application provides loading feedback and handles errors that may occur while retrieving external data files.
 
-Testing
+Testing Checklist
 
-The project should be tested for:
-
-- Correct event display
-- Event search functionality
-- Form validation
-- Event submission
-- localStorage functionality
-- Successful JSON loading
-- Fetch API error handling
-- Responsive layouts
-- Keyboard navigation
+- [ ] Event cards display correctly.
+- [ ] Search returns matching events.
+- [ ] Unmatched searches show a helpful message.
+- [ ] Form validation works correctly.
+- [ ] Event submission behaves as expected.
+- [ ] Browser localStorage retains supported data.
+- [ ] JSON data loads successfully.
+- [ ] XML event title appears on the webpage.
+- [ ] JSON and XML operations produce console output.
+- [ ] Layout works across different screen sizes.
+- [ ] Keyboard navigation remains accessible.
 
 Team Members
 
-1. Preeti Singh (Team Leader) - 20261651065
-2. Sanskrati Parmar - 20261651078
-3. Falgun Dudhatra - 20261651037
-4. Aditya Thakur - 20261651005
-5. Piyush Gupta - 20261651059
+| Name | Roll Number | Role |
+|---|---|---|
+| Preeti Singh | 20261651065 | Team Leader |
+| Sanskrati Parmar | 20261651078 | Team Member |
+| Falgun Dudhatra | 20261651037 | Team Member |
+| Aditya Thakur | 20261651005 | Team Member |
+| Piyush Gupta | 20261651059 | Team Member |
 
-Course
+Academic Information
 
-Web Programming Lab  
-Indian Institute of Information Technology Vadodara
+Course:Web Programming Lab
 
-Academic Year
+Institute:Indian Institute of Information Technology Vadodara
 
-2026
+Academic Year: 2026
+
+Repository
+
+[Campus Event Board on GitHub](https://github.com/Preeti2395/event-board)
