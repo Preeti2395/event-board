@@ -418,7 +418,7 @@ async function fetchEvents() {
 
 fetchEvents();
 
- // Assignment 7 - B4: Fetch and parse XML data
+// Assignment 7 - B4: Fetch and parse XML data
 async function fetchXML() {
     try {
         const response = await fetch("events.xml");
@@ -440,10 +440,9 @@ async function fetchXML() {
 
         console.log("First XML Event Title:", firstTitle);
 
-        const message = document.createElement("p");
-        message.textContent = "First Event from XML: " + firstTitle;
-
-        document.getElementById("event-container").before(message);
+        // Assignment 7 - B4git add script.js
+        document.getElementById("xml-event-title").textContent =
+            "First Event from XML: " + firstTitle;
 
     } catch (error) {
         console.error("XML Error:", error);
