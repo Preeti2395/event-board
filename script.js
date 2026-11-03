@@ -1,7 +1,7 @@
 
 console.log("Assignment 6 started successfully");
 
- // A2
+// A2
 
 const eventTitle = "Technical Workshop";
 const eventDate = "5 September 2026";
@@ -15,7 +15,7 @@ console.log("Total Seats:", totalSeats);
 console.log("Seats Left:", seatsLeft);
 console.log("Online Event:", isOnline);
 
- // A3
+// A3
 
 const events = [
     {
@@ -45,7 +45,7 @@ const events = [
 ];
 
 
- // B8
+// B8
 
 const savedEvents = localStorage.getItem("campusEvents");
 
@@ -68,7 +68,7 @@ console.log("All Events:", events);
 console.log("First Event:", events[0]);
 console.log("Total Events:", events.length);
 
- // A4
+// A4
 
 for (const event of events) {
     let status;
@@ -84,7 +84,7 @@ for (const event of events) {
     console.log(event.title + " : " + status);
 }
 
- // A5
+// A5
 
 console.log("----- All Campus Events -----");
 
@@ -96,12 +96,12 @@ for (const event of events) {
     console.log("------------------------");
 }
 
- // A6
+// A6
 
 function formatEvent(ev) {
     return ev.title + " | Date: " + ev.date +
-           " | Seats: " + ev.seats +
-           " | Online: " + ev.online;
+        " | Seats: " + ev.seats +
+        " | Online: " + ev.online;
 }
 
 console.log("Formatted Events");
@@ -110,7 +110,7 @@ for (const event of events) {
     console.log(formatEvent(event));
 }
 
- // A7
+// A7
 
 const availableEvents = events.filter(ev => ev.seats > 0);
 
@@ -120,7 +120,7 @@ availableEvents.forEach(ev => {
     console.log(ev.title + " | Seats: " + ev.seats);
 });
 
- // A8
+// A8
 
 console.log("----- Block Scope Example -----");
 
@@ -136,7 +136,7 @@ if (true) {
 
 console.log("Outside Message:", message);
 
- // B1
+// B1
 
 const mainSection = document.getElementById("main");
 
@@ -151,7 +151,7 @@ console.log("Navigation:", navigation);
 console.log("Total Links:", allLinks.length);
 console.log("Search Input:", searchInput);
 
- // B2
+// B2
 
 const eventContainer = document.querySelector("#event-container");
 
@@ -199,7 +199,7 @@ function renderEvents(eventList) {
 
 renderEvents(events);
 
- // B3
+// B3
 
 const firstCard = document.querySelector(".event-card");
 
@@ -227,13 +227,13 @@ allCards.forEach((card, index) => {
 
 console.log("B3 DOM manipulation completed");
 
- // B4
+// B4
 
 const searchButton = document.querySelector(
     ".search-form button"
 );
 
-searchButton.addEventListener("click", function(event) {
+searchButton.addEventListener("click", function (event) {
 
     event.preventDefault();
 
@@ -251,11 +251,11 @@ searchButton.addEventListener("click", function(event) {
     console.log("Search Text:", searchText);
 });
 
- // B5
+// B5
 
 const eventSearchInput = document.getElementById("search-events");
 
-eventSearchInput.addEventListener("keydown", function(event) {
+eventSearchInput.addEventListener("keydown", function (event) {
 
     if (event.key === "Enter") {
         event.preventDefault();
@@ -269,26 +269,25 @@ eventSearchInput.addEventListener("keydown", function(event) {
         );
 
         if (matchingEvents.length === 0) {
-           document.getElementById("event-container").innerHTML =
-           "<p>No events found. Try another search.</p>";
-        } else 
-        {
-          renderEvents(matchingEvents);
-    }
+            document.getElementById("event-container").innerHTML =
+                "<p>No events found. Try another search.</p>";
+        } else {
+            renderEvents(matchingEvents);
+        }
 
         console.log("Enter Key Pressed");
         console.log("Searching for:", searchText);
     }
 });
 
- // B6
+// B6
 
 const eventForm = document.querySelector(".event-form");
 
-eventForm.addEventListener("submit", function(e) {
+eventForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    
+
     // B7
     if (!validateEventForm()) {
         return;
@@ -311,8 +310,8 @@ eventForm.addEventListener("submit", function(e) {
     };
 
     events.push(newEvent);
-    
-localStorage.setItem("campusEvents", JSON.stringify(events));
+
+    localStorage.setItem("campusEvents", JSON.stringify(events));
 
     renderEvents(events);
 
@@ -323,7 +322,7 @@ localStorage.setItem("campusEvents", JSON.stringify(events));
     alert("Event added successfully!");
 });
 
- // B7
+// B7
 
 const eventNameInput = document.getElementById("event-name");
 const eventEmailInput = document.getElementById("event-email");
@@ -354,7 +353,7 @@ function validateEventForm() {
 
 console.log("B7 Form Validation Ready");
 
- // B7
+// B7
 
 async function fetchEvents() {
     const container = document.getElementById("event-container");
@@ -365,7 +364,7 @@ async function fetchEvents() {
     container.prepend(loadingMessage);
 
     try {
-        
+
         const response = await fetch("events.json");
 
         if (!response.ok) {
@@ -373,6 +372,16 @@ async function fetchEvents() {
         }
 
         const fetchedEvents = await response.json();
+        // Assignment 7 - B2: 
+        console.log("First Event Title:", fetchedEvents[0].title);
+        console.log("Last Event Seats:", fetchedEvents[fetchedEvents.length - 1].seats);
+
+        // Assignment 7 - B3:
+        const jsonText = JSON.stringify(fetchedEvents, null, 2);
+        console.log("JSON String:", jsonText);
+
+        const parsedEvents = JSON.parse(jsonText);
+        console.log("Parsed Events:", parsedEvents);
 
         console.log("Fetched Events:", fetchedEvents);
 
