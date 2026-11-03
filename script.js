@@ -417,3 +417,65 @@ async function fetchEvents() {
 }
 
 fetchEvents();
+
+ // Assignment 7 - B4: Fetch and parse XML data
+async function fetchXML() {
+    try {
+        const response = await fetch("events.xml");
+
+        if (!response.ok) {
+            throw new Error("Failed to load XML");
+        }
+
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+        if (xmlDoc.querySelector("parsererror")) {
+            throw new Error("Invalid XML format");
+        }
+
+        const titles = xmlDoc.getElementsByTagName("title");
+        const firstTitle = titles[0].textContent;
+
+        console.log("First XML Event Title:", firstTitle);
+
+        const message = document.createElement("p");
+        message.textContent = "First Event from XML: " + firstTitle;
+
+        document.getElementById("event-container").before(message);
+
+    } catch (error) {
+        console.error("XML Error:", error);
+    }
+}
+
+fetchXML();
+// Assignment 7 - B5: Compare JSON and XML file sizes
+async function compareFileSizes() {
+    try {
+        const [jsonResponse, xmlResponse] = await Promise.all([
+            fetch("events.json"),
+            fetch("events.xml")
+        ]);
+
+        if (!jsonResponse.ok || !xmlResponse.ok) {
+            throw new Error("Could not load JSON or XML");
+        }
+
+        const jsonText = await jsonResponse.text();
+        const xmlText = await xmlResponse.text();
+
+        const jsonBytes = new TextEncoder().encode(jsonText).length;
+        const xmlBytes = new TextEncoder().encode(xmlText).length;
+
+        console.log("JSON Size:", jsonBytes, "bytes");
+        console.log("XML Size:", xmlBytes, "bytes");
+        console.log("Larger File:", jsonBytes > xmlBytes ? "JSON" : "XML");
+
+    } catch (error) {
+        console.error("Size Comparison Error:", error);
+    }
+}
+
+compareFileSizes();
