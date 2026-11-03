@@ -268,7 +268,13 @@ eventSearchInput.addEventListener("keydown", function(event) {
             ev.title.toLowerCase().includes(searchText)
         );
 
-        renderEvents(matchingEvents);
+        if (matchingEvents.length === 0) {
+           document.getElementById("event-container").innerHTML =
+           "<p>No events found. Try another search.</p>";
+        } else 
+        {
+          renderEvents(matchingEvents);
+    }
 
         console.log("Enter Key Pressed");
         console.log("Searching for:", searchText);
