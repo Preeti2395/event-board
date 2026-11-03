@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+    <event id="1">
+        <title>Technical Workshop</title>
+        <date>2026-09-05</date>
+        <seats>25</seats>
+        <online>false</online>
+    </event>
+
+    <event id="2">
+        <title>Sports Day</title>
+        <date>2026-09-10</date>
+        <seats>40</seats>
+        <online>false</online>
+    </event>
+
+    <event id="3">
+        <title>Coding Competition</title>
+        <date>2026-09-15</date>
+        <seats>0</seats>
+        <online>true</online>
+    </event>
+
+    <event id="4">
+        <title>Cultural Fest</title>
+        <date>2026-09-20</date>
+        <seats>4</seats>
+        <online>false</online>
+    </event>
+</events>
