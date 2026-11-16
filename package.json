@@ -1,0 +1,24 @@
+{
+  "name": "event-board",
+  "version": "1.0.0",
+  "description": "Campus Event Board",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Preeti2395/event-board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Preeti2395/event-board/issues"
+  },
+  "homepage": "https://github.com/Preeti2395/event-board#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

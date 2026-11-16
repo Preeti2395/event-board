@@ -227,56 +227,47 @@ allCards.forEach((card, index) => {
 
 console.log("B3 DOM manipulation completed");
 
-// B4
+// B4 and B5 - Server-side search
 
-const searchButton = document.querySelector(
-    ".search-form button"
-);
-
-searchButton.addEventListener("click", function (event) {
-
-    event.preventDefault();
-
-    const searchText = document
-        .getElementById("search-events")
-        .value.toLowerCase().trim();
-
-    const matchingEvents = events.filter(ev =>
-        ev.title.toLowerCase().includes(searchText)
-    );
-
-    renderEvents(matchingEvents);
-
-    console.log("Search Button Clicked");
-    console.log("Search Text:", searchText);
-});
-
-// B5
-
+const searchButton = document.querySelector(".search-form button");
 const eventSearchInput = document.getElementById("search-events");
 
-eventSearchInput.addEventListener("keydown", function (event) {
+async function searchEvents() {
+    const searchText = eventSearchInput.value.trim();
 
-    if (event.key === "Enter") {
-        event.preventDefault();
-
-        const searchText = eventSearchInput.value
-            .toLowerCase()
-            .trim();
-
-        const matchingEvents = events.filter(ev =>
-            ev.title.toLowerCase().includes(searchText)
+    try {
+        const response = await fetch(
+            "/api/search?title=" + encodeURIComponent(searchText)
         );
 
+        if (!response.ok) {
+            throw new Error("Search failed");
+        }
+
+        const matchingEvents = await response.json();
+
         if (matchingEvents.length === 0) {
-            document.getElementById("event-container").innerHTML =
-                "<p>No events found. Try another search.</p>";
+            eventContainer.textContent =
+                "No events found. Try another search.";
         } else {
             renderEvents(matchingEvents);
         }
 
-        console.log("Enter Key Pressed");
-        console.log("Searching for:", searchText);
+    } catch (error) {
+        console.error("Search Error:", error);
+        alert("Unable to search events.");
+    }
+}
+
+searchButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    searchEvents();
+});
+
+eventSearchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchEvents();
     }
 });
 
@@ -365,7 +356,7 @@ async function fetchEvents() {
 
     try {
 
-        const response = await fetch("events.json");
+        const response = await fetch("/api/events");
 
         if (!response.ok) {
             throw new Error("Failed to fetch events");
