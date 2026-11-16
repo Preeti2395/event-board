@@ -2,7 +2,7 @@
 
 Campus Event Board is a responsive web application designed to help students explore and manage activities at the Indian Institute of Information Technology Vadodara.
 
-The platform brings together campus events, schedules, student clubs, and event registration information in one accessible interface. It combines HTML, CSS, JavaScript, JSON, and XML to demonstrate interactive web development and structured data processing.
+The platform brings together campus events, schedules, student clubs, and event registration information in one accessible interface. It combines HTML, CSS, JavaScript, JSON, XML, Node.js, and Express.js to demonstrate interactive web development, structured data processing, and client-server communication.
 
 Key Features
 
@@ -18,6 +18,16 @@ Event Submission
 - Validate event names, email addresses, and required fields.
 - Process form submissions using JavaScript.
 - Store event-related information in browser localStorage.
+
+Backend and Database Integration
+
+- Node.js and Express.js based backend server.
+- JSON file-based database using events.json.
+- Read database records using the File System module.
+- Retrieve event records through REST API endpoints.
+- Perform server-side event search using keywords.
+- Exchange data between frontend and backend using HTTP requests.
+- Handle server and data retrieval errors.
 
 Structured Data Processing
 - Maintain campus event information in JSON and XML formats.
@@ -51,6 +61,12 @@ Technologies Used
 | DOM API | Dynamic webpage updates |
 | DOMParser | Parsing XML documents |
 | localStorage | Browser-based data persistence |
+| Node.js | Backend runtime environment |
+| Express.js | Server development and API routing |
+| File System (fs) | Reading JSON database records |
+| Path Module | Managing file paths |
+| REST API | Retrieving and searching event records |
+| npm | Dependency management |
 | Git and GitHub | Version control and team collaboration |
 
 Project Structure
@@ -59,6 +75,10 @@ Project Structure
 event-board/
 ├── index.html
 ├── script.js
+├── server.js
+├── package.json
+├── package-lock.json
+├── .gitignore
 ├── events.json
 ├── events.xml
 ├── README.md
@@ -73,12 +93,15 @@ event-board/
 Getting Started
 
 1. Clone or download the project repository.
-2. Open the `event-board` folder in Visual Studio Code.
-3. Install the Live Server extension if required.
-4. Right-click `index.html` and select **Open with Live Server**.
-5. Explore the website and test the event search, event submission, and dynamic event display features.
+2. Open the event-board folder in Visual Studio Code.
+3. Open the terminal and run `npm install`.
+4. Start the backend server using `node server.js`.
+5. Open http://localhost:3000 in your browser.
+6. Explore the website and test event search, API endpoints,
+   event submission, and dynamic event display.
 
-Note: Run the project using a local development server rather than opening the HTML file directly, because JavaScript uses the Fetch API to load JSON and XML files.
+Note: The application requires Node.js and Express.js
+to support backend operations and server-side event search.
 
 How the Application Works
 
@@ -88,7 +111,7 @@ JavaScript manages event information and generates event cards based on the avai
 
 Event Search
 
-The search feature filters events according to user input and updates the displayed results without manually modifying the HTML.
+The search feature sends an HTTP request to the Express.js backend using the Fetch API. The server searches event records from the JSON file-based database and returns matching results. JavaScript dynamically updates the webpage with those results.
 
 Form Validation
 
@@ -106,6 +129,14 @@ Error Handling
 
 The application provides loading feedback and handles errors that may occur while retrieving external data files.
 
+API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Load the home page |
+| GET | `/api/events` | Retrieve all event records |
+| GET | `/api/search?title=coding` | Search events by title |
+
 Testing Checklist
 
 - [ ] Event cards display correctly.
@@ -119,6 +150,11 @@ Testing Checklist
 - [ ] JSON and XML operations produce console output.
 - [ ] Layout works across different screen sizes.
 - [ ] Keyboard navigation remains accessible.
+- [ ] Express.js server starts successfully.
+- [ ] JSON file-based database loads correctly.
+- [ ] REST API returns all event records.
+- [ ] Server-side search returns matching events.
+- [ ] Client-server communication works correctly.
 
 Team Members
 
